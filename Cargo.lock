@@ -784,12 +784,14 @@ dependencies = [
 name = "tests"
 version = "0.1.0"
 dependencies = [
+ "child",
  "cosmwasm-schema",
  "cosmwasm-std",
  "cosmwasm-storage",
  "cw-multi-test",
  "cw-storage-plus",
  "cw2",
+ "factory",
  "schemars",
  "serde",
  "thiserror",
