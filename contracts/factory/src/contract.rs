@@ -88,7 +88,7 @@ fn query_children(deps: Deps) -> StdResult<ChildrenResponse> {
 #[cfg_attr(not(feature = "library"), entry_point)]
 pub fn reply(deps: DepsMut, _env: Env, msg: Reply) -> Result<Response, ContractError> {
     // parse the reply data so we can get the contract address
-    let res = parse_reply_instantiate_data(msg.clone())
+    let res = parse_reply_instantiate_data(msg)
         .map_err(|e| ContractError::ParseReplyError(e.to_string()))?;
 
     let child_contract = deps.api.addr_validate(&res.contract_address)?;
